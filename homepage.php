@@ -25,7 +25,7 @@ if(isset($_GET['code'])) {
 </head>
 
 <body>
-<!--- Navigation bar --->
+<!-- Navigation bar -->
 <nav>
 <u1>
 <li><a href="">Home</a></li>
@@ -33,7 +33,7 @@ if(isset($_GET['code'])) {
 <li><a href="set_coinbase_account.php">Activate coinbase</a></li>
 </u1>
 </nav>
-<!--- table search  --->
+<!-- table search  -->
 <table id="tablesearch" cellspacing="1" border="0">
 <tbody>
 <tr>
