@@ -14,7 +14,7 @@
     $stmt->execute(array($_SESSION["user"]));
 
     if($row = $stmt->fetch()) {
-        if (isset($row["access_token"]))
+        if (!isset($row["access_token"]))
         {
             ?>
                 <li><a href="set_coinbase_account.php">Activate coinbase</a></li>
