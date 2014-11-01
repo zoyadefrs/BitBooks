@@ -1,4 +1,9 @@
 <?php
+if(!isset($_SESSION['user']))
+{
+	header('Location: index.php');
+}
+
 require_once('lib.php');
 require_once("coinbase-php/lib/Coinbase.php");
 include('database.php');
@@ -25,14 +30,9 @@ if(isset($_GET['code'])) {
 </head>
 
 <body>
-<!-- Navigation bar -->
-<nav>
-<u1>
-<li><a href="">Home</a></li>
-<li><a href="">About</a></li>
-<li><a href="set_coinbase_account.php">Activate coinbase</a></li>
-</u1>
-</nav>
+<?php
+require_once("navbar.php")
+?>
 <!-- table search  -->
 <table id="tablesearch" cellspacing="1" border="0">
 <tbody>
