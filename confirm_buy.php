@@ -4,7 +4,23 @@
 	{
 		header('Location: index.php');
 	}
-	
+?>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/confirm_buy.css">
+    <link rel="stylesheet" type="text/css" href="css/navbar.css">
+    <script src="js/confirm_buy.js"></script>
+</head>
+<body>
+
+    <?php
+    require_once("navbar.php");
+    ?>
+
+
+
+
+    <?php
 	
 	require_once("lib.php");
     require_once("database.php");
@@ -23,7 +39,11 @@
 
             $coinbaseOauth = new Coinbase_OAuth($_gCLIENT_ID, $_gCLIENT_SECRET, $_gREDIRECT_URL);
             $coinbase = Coinbase::withOauth($coinbaseOauth, $tokens);
-            echo $coinbase->getBalance();
+            #$coinbase->requestMoney('alexan_s@encs.concordia.ca', 0.01, "My test");
         }
     }
-?>
+
+    ?>
+
+</body>
+</html>

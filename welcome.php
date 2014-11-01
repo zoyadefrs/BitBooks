@@ -8,6 +8,7 @@ require_once("coinbase-php/lib/Coinbase.php");
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="css/welcome.css">
+<link rel="stylesheet" type="text/css" href="css/navbar.css">
 </head>
 
 <body>
