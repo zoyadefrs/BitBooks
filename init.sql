@@ -14,7 +14,9 @@ username varchar(255) NOT NULL,
 LastName varchar(255) NOT NULL,
 FirstName varchar(255) NOT NULL,
 password varchar(255) NOT NULL,
-tokens varchar(255),
+access_token varchar(255),
+refresh_token varchar(255),
+expire_time int,
 PRIMARY KEY (username)
 );
 
