@@ -14,7 +14,7 @@ if(isset($_GET['code'])) {
 	$tokens = $coinbaseOauth->getTokens($_GET['code']);
 
 	$coinbase = Coinbase::withOauth($coinbaseOauth, $tokens);
-    $stmt = $conn->prepare('insert into student (access_token, refresh_token, expire_time) values (?, ?, ?)');
+    $stmt = $conn->prepare('update student set access_token = ?, refresh_token = ?, expire_time = ?');
     $stmt->execute(array($tokens["access_token"], $tokens["refresh_token"], $tokens["expire_time"]));
 }
 
