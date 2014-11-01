@@ -12,7 +12,7 @@ if(!isset($_SESSION['user']))
 </head>
 
 <body>
-<!--- Navigation bar --->
+<!-- Navigation bar -->
 <nav>
 <u1>
 <li><a href="">Home</a></li>
@@ -24,7 +24,7 @@ if(!isset($_SESSION['user']))
 </nav>
 <div class ="container">
 <form>
-<!--- table search  --->
+<!-- table search  -->
 <table id="tablesearch" cellspacing="1" border="0">
 <tbody>
 <tr>
