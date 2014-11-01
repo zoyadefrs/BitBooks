@@ -7,15 +7,12 @@ if(!isset($_SESSION['user']))
 
 require_once('lib.php');
 require_once("coinbase-php/lib/Coinbase.php");
-include('database.php');
+require_once('database.php');
 if(isset($_GET['code'])) {
 	#User was redirected from coinbase after he accepted our third-party bitcoin app
 
 	$coinbaseOauth = new Coinbase_OAuth($_gCLIENT_ID, $_gCLIENT_SECRET, $_gREDIRECT_URL);
 	$tokens = $coinbaseOauth->getTokens($_GET['code']);
-	# $tokens["access_token"] string
-	# $tokens["refresh_token"] string
-	# $tokens["expire_time"] int
 
 	$coinbase = Coinbase::withOauth($coinbaseOauth, $tokens);
     $stmt = $conn->prepare('insert into student (access_token, refresh_token, expire_time) values (?, ?, ?)');
