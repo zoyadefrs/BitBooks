@@ -11,12 +11,10 @@ if(isset($_GET['code'])) {
 	# $tokens["refresh_token"] string
 	# $tokens["expire_time"] int
 
-	#TODO Alex: Store tokens that user has can now make transaction
-
 	$coinbase = Coinbase::withOauth($coinbaseOauth, $tokens);
+    $stmt = $conn->prepare('insert into student (access_token, refresh_token, expire_time) values (?, ?, ?)');
+    $stmt->execute(array($tokens["access_token"], $tokens["refresh_token"], $tokens["expire_time"]));
 }
-
-#TODO Alex (or someone): In navbar.php, if user's tokens is set in DB, don't show "Link coinbase account" link 
 
 ?>
 <html>
