@@ -5,9 +5,14 @@ require_once("coinbase-php/lib/Coinbase.php");
 
 if(isset($_GET['code'])) {
 	#User was redirected from coinbase after he accepted our third-party bitcoin app
-	#TODO Alex: Store tokens that user has can now make transaction
+
+	$coinbaseOauth = new Coinbase_OAuth($_gCLIENT_ID, $_gCLIENT_SECRET, $_gREDIRECT_URL);
 	$tokens = $coinbaseOauth->getTokens($_GET['code']);
+	#TODO Alex: Store tokens that user has can now make transaction
+	$coinbase = Coinbase::withOauth($coinbaseOauth, $tokens);
 }
+
+#TODO Alex (or someone): In navbar.php, if user's tokens is set in DB, don't show "Link coinbase account" link 
 ?>
 
 <html>
@@ -22,7 +27,7 @@ if(isset($_GET['code'])) {
 
 <div class= "welcome">
 <h3>Welcome to ____ buy and sell textbooks and class related contents </h3>
-<button type="button" onclick=""> Sign in </button>
+<a href="login.php"><button type="button"> Sign in </button></a>
 </div>
 
 

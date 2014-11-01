@@ -1,5 +1,5 @@
 <?php
-#No session_start() => it's always called from index.php, which does it already;
+session_start();
 require_once('lib.php');
 
 #Form validation
@@ -8,7 +8,11 @@ if(!empty($_POST))
 	$username = validate_input($_POST['username']);
 	$password = md5(validate_input($_POST['password']));
 
-	#TODO alex: save in database
+	#TODO alex: Check against database
+
+	#For now, I just assume perfect user.
+	$_SESSION['user'] = $username;
+	header('Location: homepage.php');
 
 }
 ?>
