@@ -4,7 +4,6 @@ if(!isset($_SESSION['user']))
 {
 	header('Location: index.php');
 }
-
 require_once('lib.php');
 require_once("coinbase-php/lib/Coinbase.php");
 require_once('database.php');
@@ -28,7 +27,7 @@ if(isset($_GET['code'])) {
 
 <body>
 <?php
-require_once("navbar.php")
+require_once("navbar.php");
 ?>
 <!-- table search  -->
 <div id="tablesearch_wrapper">
