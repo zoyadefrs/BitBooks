@@ -14,29 +14,44 @@ username varchar(255) NOT NULL,
 LastName varchar(255) NOT NULL,
 FirstName varchar(255) NOT NULL,
 password varchar(255) NOT NULL,
+tokens varchar(255),
 PRIMARY KEY (username)
 );
 
 insert into student(username, LastName, FirstName, password) values
-('Smi_Jo', 'Smith', 'John', 'password'),
-('Jo_Bo', 'Jones', 'Bob', 'password'),
-('Bi_bo', 'Bob', 'Billy', 'password'),
-('Wi_Whe', 'Wheaton', 'Will', 'password');
+('Smi_Jo', 'Smith', 'John', MD5('password')),
+('Jo_Bo', 'Jones', 'Bob', MD5('password')),
+('Bi_bo', 'Bob', 'Billy', MD5('password')),
+('Wi_Whe', 'Wheaton', 'Will', MD5('password'));
+
+DROP table IF EXISTS faculty;
+CREATE TABLE faculty
+(
+id int NOT NULL AUTO_INCREMENT,
+name varchar(255) NOT NULL,
+PRIMARY KEY (id)
+);
+
+insert into faculty(name) values
+('Engineering And Computer Science'),
+('Creative Arts');
 
 DROP table IF EXISTS course;
 CREATE TABLE course
 (
+faculty_id int NOT NULL,
 faculty varchar(5) NOT NULL,
 code int NOT NULL,
 name varchar(255) NOT NULL,
-PRIMARY KEY (faculty, code)
+PRIMARY KEY (faculty, code),
+FOREIGN KEY (faculty_id) REFERENCES faculty(id)
 );
 
-insert into course(faculty, code, `name`) values
-('COMP', 326, 'Algorithms'),
-('COMP', 202, 'Data Structures'),
-('ENGR', 213, 'Differential Equations'),
-('MAST', 309, 'Crazy Rocket science math');
+insert into course(faculty_id, faculty, code, `name`) values
+((select id from faculty limit 1),'COMP', 326, 'Algorithms'),
+((select id from faculty limit 1),'COMP', 202, 'Data Structures'),
+((select id from faculty limit 1),'ENGR', 213, 'Differential Equations'),
+((select id from faculty limit 1),'MAST', 309, 'Crazy Rocket science math');
 
 DROP table IF EXISTS bookListing;
 CREATE TABLE bookListing

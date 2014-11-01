@@ -1,15 +1,21 @@
 <?php
-#No session_start() => it's always called from index.php, which does it already;
+session_start();
 require_once('lib.php');
-
+include('database.php');
 #Form validation
 if(!empty($_POST))
 {
 	$username = validate_input($_POST['username']);
 	$password = md5(validate_input($_POST['password']));
-
-	#TODO alex: save in database
-
+	$stmt = $conn->prepare('SELECT * FROM student where username = ? and password = ?');
+    $stmt->execute(array($username,$password));
+    $success = $stmt->fetch();
+#For now, I just assume perfect user.
+    if($success)
+    {
+        $_SESSION['user'] = $username;
+        header('Location: homepage.php');
+    }
 }
 ?>
 <html>
@@ -30,7 +36,18 @@ if(!empty($_POST))
 </div>
 </div>
 
-
 </body>
-
+<?php
+    if($success)
+    {
+        echo "Success!";
+    }
+    else
+    {
+        if(!empty($_POST))
+        {
+            echo "Username or password is incorrect";
+        }
+    }
+?>
 </html>
