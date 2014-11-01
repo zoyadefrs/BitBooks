@@ -1,7 +1,7 @@
 <?php
 require_once('lib.php');
 require_once("coinbase-php/lib/Coinbase.php");
-
+include('database.php');
 if(isset($_GET['code'])) {
 	#User was redirected from coinbase after he accepted our third-party bitcoin app
 
