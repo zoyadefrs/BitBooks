@@ -1,5 +1,5 @@
 <?php
-#No session_start() => it's always called from index.php, which does it already;
+session_start();
 require_once('lib.php');
 include('database.php');
 #Form validation
@@ -7,11 +7,15 @@ if(!empty($_POST))
 {
 	$username = validate_input($_POST['username']);
 	$password = md5(validate_input($_POST['password']));
-    echo $password;
 	$stmt = $conn->prepare('SELECT * FROM student where username = ? and password = ?');
     $stmt->execute(array($username,$password));
     $success = $stmt->fetch();
-//TODO: redirect to index.php
+#For now, I just assume perfect user.
+    if($success)
+    {
+        $_SESSION['user'] = $username;
+        header('Location: homepage.php');
+    }
 }
 ?>
 <html>
