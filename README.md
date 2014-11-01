@@ -29,14 +29,10 @@ sell_book.php()
 		-Title, edition, ISBN, price
 	-Store "This user is selling this book for this much"
 
-current_transactions.php()
-	-(On a sidebar)
-	-Shows a list in a table of books that you are "going to buy"
-	-Either leave the user to delete old transactions or our website knows which transactions were done.
-	-You can click on a transaction, which brings you to qrcode.php
 
-qrcode.php(transaction)
-	-displays just the qr code for a specific transaction
+set_coinbase_account.php()
+	-Button that sets OAuth with our webiste for user on coinbase
+	-Redirects to index.php (since user is logged on, redirects to 'welcome.php') with $_GET['code'] set, and used to get the needed token
 
 *********
 lib.php:
