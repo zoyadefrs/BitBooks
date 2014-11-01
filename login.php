@@ -2,6 +2,7 @@
 session_start();
 require_once('lib.php');
 include('database.php');
+$success = false;
 #Form validation
 if(!empty($_POST))
 {
