@@ -13,7 +13,24 @@ if(!empty($_POST))
 }
 ?>
 <html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/login.css">
+</head>
+
+
 <body>
-	<h1>hey</h1>
+<div class = "container">
+<div class = "login">
+<h1>Login</h1>
+<form method="post" action="">
+<p><input type="text" name="username" value="" placeholder="example@encs.concordia.ca"></p>
+<p><input type="password" name="password" value="" placeholder="Password"</p>
+<p class="submit"><input type="submit" name="commit" value="Login"></p>
+</form>
+</div>
+</div>
+
+
 </body>
+
 </html>
