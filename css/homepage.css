@@ -3,6 +3,12 @@
 {
     width:417px;
     margin: 20px auto;
+    background: #f3f3f3;
+    border-bottom: 1px solid #cfcfcf;
+    border-radius: 3px 3px 0 0;
+    box-shadow: 0 1px whitesmoke;
+    padding: 20px 20px 20px;
+
 }
 
 #tablesearch {
@@ -11,12 +17,7 @@
     font-size: 15px;
     font-weigth: bold;
     color: #555;
-    padding: 20px 20px 20px;
     text-shadow: 0 1px white;
-    background: #f3f3f3;
-    border-bottom: 1px solid #cfcfcf;
-    border-radius: 3px 3px 0 0;
-    box-shadow: 0 1px whitesmoke;
     width: 310px;
 
 
@@ -60,4 +61,11 @@ nav > u1 > li > a {
     line-height: 56px;
     padding: 0 24px;
     text-decoration: none;
+}
+
+.search {
+    text-align: right;
+}
+.container {
+
 }
