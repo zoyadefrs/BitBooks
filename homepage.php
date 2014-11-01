@@ -4,7 +4,6 @@ if(!isset($_SESSION['user']))
 {
 	header('Location: index.php');
 }
-
 require_once('lib.php');
 require_once("coinbase-php/lib/Coinbase.php");
 require_once('database.php');
@@ -28,11 +27,10 @@ if(isset($_GET['code'])) {
 
 <body>
 <?php
-require_once("navbar.php")
+require_once("navbar.php");
 ?>
 <!-- table search  -->
 <div id="tablesearch_wrapper">
-	
 	<table id="tablesearch" cellspacing="1" border="0">
 	<tbody>
 	<form action="booklist.php">
@@ -84,13 +82,14 @@ require_once("navbar.php")
 	<input name="coursenumber" type=text maxlength="4" id="coursenumber" style="font-weight:bold;width:50px;">
 	</td>
 	</tr>
-	<tr><td><input type="submit" value="Search"/></td></tr>
 
-	</form>
+
 	</tbody>
 	</table>
+    <div class="search"><input type="submit" name="search" value="Search"></div>
 
-	
+
+</form>
 </div>
 
 
