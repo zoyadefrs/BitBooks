@@ -14,6 +14,7 @@ username varchar(255) NOT NULL,
 LastName varchar(255) NOT NULL,
 FirstName varchar(255) NOT NULL,
 password varchar(255) NOT NULL,
+tokens varchar(255),
 PRIMARY KEY (username)
 );
 
