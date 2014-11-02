@@ -9,7 +9,7 @@ require_once("coinbase-php/lib/Coinbase.php");
 require_once('database.php');
 if(isset($_GET['code'])) {
 	#User was redirected from coinbase after he accepted our third-party bitcoin app
-
+    
 	$coinbaseOauth = new Coinbase_OAuth($_gCLIENT_ID, $_gCLIENT_SECRET, $_gREDIRECT_URL);
 	$tokens = $coinbaseOauth->getTokens($_GET['code']);
 
@@ -30,6 +30,13 @@ if(isset($_GET['code'])) {
 <body>
 <?php
 require_once("navbar.php");
+    
+    if(isset($_GET['code'])) {
+    ?>
+        <div style="color:green;margin:20px auto;width:250px;">Coinbase account linked successfully.</div>
+    <?php
+    }
+
 ?>
 <div class="title">
     <h1>Book Search</h1>
