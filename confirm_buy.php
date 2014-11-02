@@ -99,8 +99,11 @@
 </tr>
 </tbody>
 </table>
-
-<div class="confirm"><input type="submit" name="confirmbuy" value="Confirm"></div>
+<form method="GET" action="index.php">
+<input name="confirmbuy" type="hidden" value="1"/>
+<div class="confirm">
+<input type="submit" value="Confirm">
+</div>
 </form>
 </div>
 </div>
