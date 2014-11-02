@@ -1,9 +1,13 @@
-json = JSON.parse("[{\"id\":\"3\",\"faculty\":\"COMP\",\"code\":\"202\",\"isbn\":\"5423659874514\",\"title\":\"Really Cool Algorithms\",\"author\":\"Donald Knuth\",\"seller\":\"Wi_Whe\",\"price\":\"8.20\",\"copies\":\"2\"}]");
-generate_homepage(json);
+/*json = JSON.parse("[{\"id\":\"3\",\"faculty\":\"COMP\",\"code\":\"202\",\"isbn\":\"5423659874514\",\"title\":\"Really Cool Algorithms\",\"author\":\"Donald Knuth\",\"seller\":\"Wi_Whe\",\"price\":\"8.20\",\"copies\":\"2\"},{\"id\":\"3\",\"faculty\":\"COMP\",\"code\":\"202\",\"isbn\":\"5423659874514\",\"title\":\"Really Cool Algorithms\",\"author\":\"Donald Knuth\",\"seller\":\"Wi_Whe\",\"price\":\"8.20\",\"copies\":\"2\"}]");
+
+window.onload = function()
+{
+    generate_homepage(json);
+}*/
 
 function generate_homepage(json_array_obj)
 {
-	console.log(json_array_obj[0].title);
+	//console.log(json_array_obj[0].title);
 	var count = 0;
 	var content_wrapper = document.getElementById("content_wrapper");
 	console.log(content_wrapper);
