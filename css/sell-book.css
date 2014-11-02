@@ -4,17 +4,30 @@
     line-heigth: 40px;
     font-size: 15px;
     font-weigth: bold;
-    padding: 20px 20px 20px;
     text-shadow: 0 1px white;
     border-radius: 3px 3px 0 0;
     box-shadow: 0 1px whitesmoke;
-     width: 400px;
+    width: 400px;
+     
     
     
 }
-table tr td select#departmentname {
-    min_width:150px;
+#coursename,#coursenumber,#booktitle,#bookisbn,#bookprice{
+    margin: 10px;
+    right: 10px;
+    
+    
+    
 }
+
+.tablecontent {
+    background-color:powderblue;
+    margin: 0px auto;
+    width: 350px;
+    box-shadow: 0 1px whitesmoke;
+    
+}
+
 
 nav {
     
@@ -58,8 +71,8 @@ nav > u1 > li > a {
 }
 
 .container {
-    margin: 50px auto;
-    width: 400px;
+    margin: 0px auto;
+    width: 80%;
     line-heigth: 40px;
     font-size: 15px;
     font-weigth: bold;

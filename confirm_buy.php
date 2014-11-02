@@ -17,8 +17,71 @@
     require_once("navbar.php");
     ?>
 
+<div class = "container">
+<div class = "confirmbuy">
+<!-- Navigation bar -->
 
+<!-- table search  -->
+<table id="tablesearch" cellspacing="1" border="0">
+<tbody>
+<tr>
+<td style="height:5px;"></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;</td>
+<td style="white-space:nowrap;">
+<b>Here is your booklist: </b>
+&nbsp;
+</td>
+</tr>
 
+<tr>
+<td>&nbsp;&nbsp;</td>
+<td style="white-space:nowrap;">
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;</td>
+<td style="white-space:nowrap;">
+<b>Seller: John Smith</b>
+&nbsp;
+</td>
+</tr>
+
+<tr>
+<td>&nbsp;&nbsp;</td>
+<td style="white-space:nowrap;">
+<b>Title Name: TheWookieBook</b>
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;</td>
+<td style="white-space:nowrap;">
+<b>ISBN: 0001346789S</b>
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;</td>
+<td style="white-space:nowrap;">
+<b>Edition: 3rd</b>
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;</td>
+<td style="white-space:nowrap;">
+<b>&nbsp;&nbsp; </b>
+</td>
+</tr>
+</tbody>
+</table>
+
+<div class="confirm"><input type="submit" name="confirmbuy" value="Confirm"></div>
+</form>
+</div>
+</div>
 
     <?php
 	
