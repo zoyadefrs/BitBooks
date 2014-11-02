@@ -4,6 +4,7 @@
 	{
 		header('Location: index.php');
 	}
+    $listingID = $_GET["id"];
 ?>
 <html>
 <head>
@@ -88,9 +89,9 @@
 	require_once("lib.php");
     require_once("database.php");
 	require_once("coinbase-php/lib/Coinbase.php");
-
-    $stmt = $conn->prepare('SELECT access_token, refresh_token, expire_time FROM student WHERE username = ?');
-    $stmt->execute(array($_SESSION["user"]));
+    
+    $stmt = $conn->prepare('SELECT access_token, refresh_token, expire_time FROM student WHERE username = (select seller from bookListing where id = ?)');
+    $stmt->execute(array($listingID));
 
     if($row = $stmt->fetch()) {
         if (isset($row["access_token"]))

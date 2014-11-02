@@ -1,6 +1,7 @@
+
 function generate_homepage(json_array_obj)
 {
-	
+	//console.log(json_array_obj[0].title);
 	var count = 0;
 	var content_wrapper = document.getElementById("content_wrapper");
 	content_wrapper.innerHTML="";

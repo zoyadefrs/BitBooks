@@ -20,6 +20,21 @@ $isbn = $_GET['isbn'];
 require_once("navbar.php");
 ?>
 <div id="content_wrapper">
+<?php
+    $stmt = $conn->prepare("select id, faculty, code, isbn, title, edition, author, seller, (select concat(firstName, ' ', lastName) as name from student where userName = bl.seller), price from bookListing bl where isbn = '5423659874512'");
+    $stmt->execute(array($listingID));
+
+    while($row = $stmt->fetch())
+    {
+        ?>
+        <div>
+        <span>
+        
+        </span>
+        </div>
+        <?php
+    }
+?>
 </div>
 
 </body>
