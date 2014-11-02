@@ -1,14 +1,38 @@
 
 #tablesearch_wrapper
 {
-    width:417px;
-    margin: 20px auto;
+    width:80%;
+    margin: 0px auto;
     background: #f3f3f3;
     border-bottom: 1px solid #cfcfcf;
     border-radius: 3px 3px 0 0;
     box-shadow: 0 1px whitesmoke;
     padding: 20px 20px 20px;
+    font-family: 'Verdana', sans-serif;
+   
 
+}
+
+#tabsearchcontent{
+    background-color:powderblue;
+    margin: 0px auto;
+    width: 350px;
+    box-shadow: 0 1px whitesmoke;
+   
+
+}
+
+.title{
+    margin-top:40px;
+    text-align:center;
+    font-family:'Verdana';
+}
+
+
+#coursename,#coursenumber{
+    font-family:Verdana;
+    margin: 10px;
+    right: 10px;
 }
 
 #tablesearch {
@@ -19,12 +43,15 @@
     color: #555;
     text-shadow: 0 1px white;
     width: 310px;
+    color:black;
 
 
 }
 
 .search {
+    margin: 10px;
     text-align: right;
+   
 }
 
 
@@ -32,7 +59,7 @@
 #content_wrapper
 {
     width:80%;
-    margin:50px auto;
+    margin:40px auto;
 }
 
 /* even & odd divs */

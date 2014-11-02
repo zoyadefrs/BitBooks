@@ -30,6 +30,9 @@ if(isset($_GET['code'])) {
 <?php
 require_once("navbar.php");
 ?>
+<div class="title">
+    <h1>Book Search</h1>
+</div>
 <div id="content_wrapper">
 	<!-- Filled in general.js-->
 </div>
@@ -37,6 +40,7 @@ require_once("navbar.php");
 <!-- table search  -->
 <div id="tablesearch_wrapper">
 	<form action="booklist.php">
+    <div id="tabsearchcontent">
 	<table id="tablesearch" cellspacing="1" border="0">
 	<tbody>
 	<tr>
@@ -54,12 +58,12 @@ require_once("navbar.php");
 	<tr>
 	<td>&nbsp;&nbsp;</td>
 	<td style="white-space:nowrap;">
-	<b>&nbsp;&nbsp; or </b>
+	<b>&nbsp;&nbsp; </b>
 	</td>
 	</tr>
 
 	<tr>
-	<td>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;</td>
 	<td style="white-space:nowrap;">
 	<b>Course Name:</b>
 	&nbsp;
@@ -78,8 +82,12 @@ require_once("navbar.php");
 	<input name="coursenumber" type=text maxlength="4" id="coursenumber" style="font-weight:bold;width:50px;">
 	</td>
 	</tr>
+
+
+
 	</tbody>
 	</table>
+    </div>
 	<div class="search"><input type="submit" name="search" value="Search" /></div>
 	</form>    
 
