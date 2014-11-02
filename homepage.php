@@ -24,6 +24,7 @@ if(isset($_GET['code'])) {
 <link rel="stylesheet" type="text/css" href="css/homepage.css">
 <link rel="stylesheet" type="text/css" href="css/navbar.css">
 <script src="js/general.js"></script>
+<script src="js/homepage.js"></script>
 </head>
 
 <body>
@@ -39,7 +40,7 @@ require_once("navbar.php");
 
 <!-- table search  -->
 <div id="tablesearch_wrapper">
-	<form action="booklist.php">
+	<form action="">
     <div id="tabsearchcontent">
 	<table id="tablesearch" cellspacing="1" border="0">
 	<tbody>
@@ -87,11 +88,14 @@ require_once("navbar.php");
 
 	</tbody>
 	</table>
-    </div>
-	<div class="search"><input type="submit" name="search" value="Search" /></div>
+
+	<div class="search"><input type="submit" name="search" value="Search" onclick = "return searchForBook();"/></div>
+
 	</form>    
 
 </div>
-
+<div id="content_wrapper">
+	<!-- Filled in general.js-->
+</div>
 </body>
 </html>
