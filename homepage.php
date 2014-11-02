@@ -22,6 +22,7 @@ if(isset($_GET['code'])) {
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="css/homepage.css">
+<link rel="stylesheet" type="text/css" href="css/navbar.css">
 <script src="js/general.js"></script>
 </head>
 
