@@ -13,12 +13,12 @@ require_once("coinbase-php/lib/Coinbase.php");
 
 <body>
 <div class = "title">
-<h2> YHacks </h2>
+<h2> BitBooks</h2>
 </div>
 
 <div class= "welcome">
-<h3>Welcome to ____ buy and sell textbooks and class related contents </h3>
-<a href="login.php"><button type="button"> Sign in </button></a>
+<h3>A secure place to buy and sell textbooks</h3>
+<div style="margin-top:100px;"><a href="login.php"><button type="button" style="width: 100px;height: 35px;border-radius: 5px;background-color: rgba(76, 82, 84, 0.24);"> Sign in </button></a></div>
 </div>
 
 

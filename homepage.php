@@ -96,11 +96,12 @@ require_once("navbar.php");
 	</tbody>
 	</table>
 
-	<div class="search"><input type="submit" name="search" value="Search" onclick = "return searchForBook();"/></div>
 
 	</form>    
 
 </div>
+<div class="search"><input type="submit" name="search" value="Search" onclick = "return searchForBook();"/></div>
+
 <div id="content_wrapper">
 	<!-- Filled in general.js-->
 </div>
