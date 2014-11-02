@@ -16,6 +16,9 @@ if(!isset($_SESSION['user']))
 <?php
 require_once("navbar.php");
 ?>
+<div class="title">
+    <h1>Sell Your Book </h1>
+</div> 
 <div class ="container">
 <div class = "tablecontent">
 <form>

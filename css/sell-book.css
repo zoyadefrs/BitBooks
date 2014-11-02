@@ -8,11 +8,16 @@
     border-radius: 3px 3px 0 0;
     box-shadow: 0 1px whitesmoke;
     width: 400px;
-     
-    
-    
 }
+
+.title{
+    margin-top:40px;
+    text-align:center;
+    font-family:'Verdana';
+}
+
 #coursename,#coursenumber,#booktitle,#bookisbn,#bookprice{
+    font-family:'Verdana';
     margin: 10px;
     right: 10px;
     
@@ -21,9 +26,10 @@
 }
 
 .tablecontent {
+    font-family:'Verdana';
     background-color:powderblue;
     margin: 0px auto;
-    width: 350px;
+    width: 370px;
     box-shadow: 0 1px whitesmoke;
     
 }
