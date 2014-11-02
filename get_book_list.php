@@ -1,16 +1,18 @@
 <?php
 require_once('database.php');
-$facultyID = $_GET['facultyID'];
-$faculty = $_GET['faculty'];
-$code = $_GET['code'];
+$faculty;
+if(isset($_GET['faculty']))
+{
+    $faculty = $_GET['faculty'];
+}
+$code;
+if(isset($_GET['code']))
+{
+    $code = $_GET['code'];
+}
 $sqlWhereParts = array();
 $sqlAnswerParts = array();
 $result = array();
-if(isset($facultyID))
-{
-    array_push($sqlWhereParts, "c.faculty_id = ?");
-    array_push($sqlAnswerParts, $facultyID);
-}
 if(isset($faculty))
 {
     array_push($sqlWhereParts, "faculty = ?");
