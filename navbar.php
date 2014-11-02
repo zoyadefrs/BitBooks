@@ -1,9 +1,9 @@
 <!-- Navigation bar -->
 <nav>
 <u1>
-<li><a href="">Home</a></li>
-<li><a href="">About</a></li>
-<li><a href="logout.php">Logout</a></li>
+<li><a href="index.php">Search for a book</a></li>
+<li><a href="sell_book.php">Sell a book</a></li>
+
 
 <?php
 
@@ -23,6 +23,6 @@
     }
     
 ?>
-
+<li><a href="logout.php">Logout</a></li>
 </u1>
 </nav>

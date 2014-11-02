@@ -14,7 +14,11 @@ if(!isset($_SESSION['user']))
 </head>
 
 <body>
-
+<?php
+require_once("navbar.php");
+?>
+<div id="content_wrapper">
+</div>
 
 </body>
 </html>

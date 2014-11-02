@@ -26,6 +26,26 @@
 .search {
     text-align: right;
 }
-.container {
 
+
+/* JAVASCRIPT GENERATED CONTENT */
+#content_wrapper
+{
+    width:80%;
+    margin:50px auto;
+}
+
+/* even & odd divs */
+.even
+{
+    width:100%;
+    border:1px solid black;
+    background-color:lightblue;
+}
+
+.odd
+{
+    width:100%;
+    border:1px solid black;
+    background-color:lightgreen;
 }

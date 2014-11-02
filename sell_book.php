@@ -13,16 +13,9 @@ if(!isset($_SESSION['user']))
 </head>
 
 <body>
-<!-- Navigation bar -->
-<nav>
-<u1>
-<li><a href="">Home</a></li>
-<li><a href="">Sell a book</a></li>
-<li><a href="">Search for a book</a></li>
-<li><a href="">About</a></li>
-<li><a href="set_coinbase_account.php">Activate coinbase</a></li>
-</u1>
-</nav>
+<?php
+require_once("navbar.php");
+?>
 <div class ="container">
 <div class = "tablecontent">
 <form>
