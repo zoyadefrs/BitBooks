@@ -5,6 +5,8 @@ if(!isset($_SESSION['user']))
 	header('Location: index.php');
 }
 
+$isbn = $_GET['isbn'];
+
 ?>
 <html>
 <head>

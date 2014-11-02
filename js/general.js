@@ -1,6 +1,3 @@
-json = JSON.parse("[{\"id\":\"3\",\"faculty\":\"COMP\",\"code\":\"202\",\"isbn\":\"5423659874514\",\"title\":\"Really Cool Algorithms\",\"author\":\"Donald Knuth\",\"seller\":\"Wi_Whe\",\"price\":\"8.20\",\"copies\":\"2\"},{\"id\":\"3\",\"faculty\":\"COMP\",\"code\":\"202\",\"isbn\":\"5423659874514\",\"title\":\"Really Cool Algorithms\",\"author\":\"Donald Knuth\",\"seller\":\"Wi_Whe\",\"price\":\"8.20\",\"copies\":\"2\"}]");
-window.onload = function () {generate_homepage(json)};
-
 function generate_homepage(json_array_obj)
 {
 	
@@ -54,3 +51,4 @@ function generate_homepage(json_array_obj)
 	}
 
 }
+
