@@ -16,6 +16,27 @@
 
     <?php
     require_once("navbar.php");
+    $stmt = $conn->prepare("select id, faculty, code, isbn, title, edition, author, seller, (select concat(firstName, ' ', lastName) from student where userName = bl.seller) as name, price from bookListing bl where id = ?");
+    $stmt->execute(array($listingID));
+    $faculty = "";
+    $code = "";
+    $isbn = "";
+    $title = "";
+    $edition = "";
+    $author = "";
+    $seller = "";
+    $price = "";
+    if($row = $stmt->fetch())
+    {
+        $faculty = $row['faculty'];
+        $code = $row['code'];
+        $isbn = $row['isbn'];
+        $title = $row['title'];
+        $edition = $row['edition'];
+        $author = $row['author'];
+        $seller = $row['name'];
+        $price = $row['price'];
+    }
     ?>
 
 <div class = "container">
@@ -44,7 +65,7 @@
 <tr>
 <td>&nbsp;&nbsp;</td>
 <td style="white-space:nowrap;">
-<b>Seller: John Smith</b>
+        <b>Seller: <?php echo $seller; ?></b>
 &nbsp;
 </td>
 </tr>
@@ -52,21 +73,21 @@
 <tr>
 <td>&nbsp;&nbsp;</td>
 <td style="white-space:nowrap;">
-<b>Title Name: TheWookieBook</b>
+<b>Title Name: <?php echo $title; ?></b>
 &nbsp;
 </td>
 </tr>
 <tr>
 <td>&nbsp;&nbsp;</td>
 <td style="white-space:nowrap;">
-<b>ISBN: 0001346789S</b>
+<b>ISBN: <?php echo $isbn; ?></b>
 &nbsp;
 </td>
 </tr>
 <tr>
 <td>&nbsp;&nbsp;</td>
 <td style="white-space:nowrap;">
-<b>Edition: 3rd</b>
+<b>Edition: <?php echo $edition; ?></b>
 &nbsp;
 </td>
 </tr>
