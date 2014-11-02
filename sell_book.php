@@ -24,6 +24,7 @@ if(!isset($_SESSION['user']))
 </u1>
 </nav>
 <div class ="container">
+<div class = "tablecontent">
 <form>
 <!-- table search  -->
 <table id="tablesearch" cellspacing="1" border="0">
@@ -34,31 +35,11 @@ if(!isset($_SESSION['user']))
 <tr>
 <td>&nbsp;&nbsp;</td>
 <td style="white-space:nowrap;">
-<b>Faculty Department:</b>
-&nbsp;
-</td>
-<td align="left" colspan="1">
-<select name="department" id="departmentname" style="background-color:White;">
-<option value="0120">Engineering and Computer Science</option>
-<option value="0150">John Molson School of Business</option>
-</select>
-</td>
-
-<tr>
-<td>&nbsp;&nbsp;</td>
-<td style="white-space:nowrap;">
-<b>&nbsp;&nbsp; or </b>
-</td>
-</tr>
-
-<tr>
-<td>&nbsp;&nbsp;</td>
-<td style="white-space:nowrap;">
 <b>Course Name:</b>
 &nbsp;
 </td>
 <td>
-<input name="coursename" type=text id="coursename" style="font-weight:bold;width:50px;">
+<input name="coursename" type=text id="coursename" maxlength="4" style="font-weight:bold;width:50px;">
 </td>
 </tr>
 <tr>
@@ -68,7 +49,17 @@ if(!isset($_SESSION['user']))
 &nbsp;
 </td>
 <td>
-<input name="coursenumber" type=text id="coursenumber" style="font-weight:bold;width:50px;">
+<input name="coursenumber" type=text id="coursenumber" maxlength="4" style="font-weight:bold;width:50px;">
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;</td>
+<td style="white-space:nowrap;">
+<b>Title:</b>
+&nbsp;
+</td>
+<td>
+<input name="booktitle" type=text id="booktitle" maxlength="30" style="font-weight:bold;width:150px;">
 </td>
 </tr>
 <tr>
@@ -78,7 +69,7 @@ if(!isset($_SESSION['user']))
 &nbsp;
 </td>
 <td>
-<input name="bookisbn" type=text id="bookisbn" style="font-weight:bold;width:50px;">
+<input name="bookisbn" type=text id="bookisbn" maxlength="13" style="font-weight:bold;width:100px;">
 </td>
 </tr>
 <tr>
@@ -88,13 +79,15 @@ if(!isset($_SESSION['user']))
 &nbsp;
 </td>
 <td>
-<input name="bookiprice" type=text id="bookprice" style="font-weight:bold;width:50px;">
+<input name="bookiprice" type=text id="bookprice" maxlength="6" style="font-weight:bold;width:50px;">
 </td>
 </tr>
 </tbody>
 </table>
+</div>
 <div class="submit"><input type="submit" name="commit" value="Let's sell my book!"></p>
 </form>
+
 </div>
 </body>
 </html>
