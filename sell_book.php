@@ -1,9 +1,23 @@
 <?php
+include_once('database.php');
 session_start();
 if(!isset($_SESSION['user']))
 {
 	header('Location: index.php');
 }
+//coursename, coursenumber, booktitle, bookisbn, bookprice
+if(isset($_GET['coursename']) && isset($_GET['coursenumber'])
+&& isset($_GET['booktitle']) && isset($_GET['bookisbn'])
+&& isset($_GET['bookprice']) && isset($_GET['author']) && isset($_GET['edition']) )
+{
+    $stmt = $conn->prepare("insert into bookListing(faculty,code, isbn,title, edition, author, seller, price) values(?,?,?,?,?,?,?,?)");
+$stmt->execute(array($_GET['coursename'],$_GET['coursenumber'],
+                          $_GET['bookisbn'],$_GET['booktitle'],
+                         $_GET['edition'],$_GET['author'],
+                         $_SESSION['user'],$_GET['bookprice']));
+header('Location: index.php?soldbook=1');
+}
+
 ?>
 
 <html>
@@ -21,7 +35,7 @@ require_once("navbar.php");
 </div> 
 <div class ="container">
 <div class = "tablecontent">
-<form>
+    <form method="GET" action="">
 <!-- table search  -->
 <table id="tablesearch" cellspacing="1" border="0">
 <tbody>
@@ -35,7 +49,7 @@ require_once("navbar.php");
 &nbsp;
 </td>
 <td>
-<input name="coursename" type=text id="coursename" maxlength="4" style="font-weight:bold;width:50px;">
+<input name="coursename" type="text" id="coursename" maxlength="4" style="font-weight:bold;width:50px;">
 </td>
 </tr>
 <tr>
@@ -75,7 +89,27 @@ require_once("navbar.php");
 &nbsp;
 </td>
 <td>
-<input name="bookiprice" type=text id="bookprice" maxlength="6" style="font-weight:bold;width:50px;">
+<input name="bookprice" type=text id="bookprice" maxlength="6" style="font-weight:bold;width:50px;">
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;</td>
+<td style="white-space:nowrap;">
+<b>Author:</b>
+&nbsp;
+</td>
+<td>
+<input name="author" type=text id="author" style="font-weight:bold;width:200px;">
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;</td>
+<td style="white-space:nowrap;">
+<b>Edition:</b>
+&nbsp;
+</td>
+<td>
+<input name="edition" type=text id="edition" maxlength="6" style="font-weight:bold;width:50px;">
 </td>
 </tr>
 </tbody>

@@ -16,10 +16,8 @@
     background: #f3f3f3;
     border-bottom: 1px solid #cfcfcf;
     border-radius: 3px 3px 0 0;
-    box-shadow: 0 1px whitesmoke;
-    width: 200px;
-    
-    
+    box-shadow: 0 1px whitesmoke;    
+    width: 280px;
 }
 
 .confirm{

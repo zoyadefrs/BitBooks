@@ -14,8 +14,8 @@ if(isset($_GET['code'])) {
 	$tokens = $coinbaseOauth->getTokens($_GET['code']);
 
 	$coinbase = Coinbase::withOauth($coinbaseOauth, $tokens);
-    $stmt = $conn->prepare('update student set access_token = ?, refresh_token = ?, expire_time = ?');
-    $stmt->execute(array($tokens["access_token"], $tokens["refresh_token"], $tokens["expire_time"]));
+    $stmt = $conn->prepare('update student set access_token = ?, refresh_token = ?, expire_time = ? where username = ?');
+    $stmt->execute(array($tokens["access_token"], $tokens["refresh_token"], $tokens["expire_time"], $_SESSION['user']));
 }
 
 ?>
@@ -34,6 +34,16 @@ require_once("navbar.php");
     if(isset($_GET['code'])) {
     ?>
         <div style="color:green;margin:20px auto;width:250px;">Coinbase account linked successfully.</div>
+    <?php
+    }
+if(isset($_GET['confirmbuy'])) {
+    ?>
+        <div style="color:green;margin:20px auto;width:250px;">An email has been sent to allow you to proceed with the transaction</div>
+    <?php
+    }
+if(isset($_GET['soldbook'])) {
+    ?>
+        <div style="color:green;margin:20px auto;width:250px;">You have successfully put a book up for sale!</div>
     <?php
     }
 

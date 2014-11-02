@@ -32,7 +32,7 @@ if(isset($code))
 
 $sql = "select faculty, code, isbn, title, edition, author, " .
         " (select count(*) from bookListing where " .
-        " isbn = isbn) as copies from bookListing " .
+        " isbn = bl.isbn) as copies from bookListing bl " .
         "where ";
 for($i = 0; $i < count($sqlWhereParts);++$i)
 {

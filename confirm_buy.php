@@ -114,20 +114,23 @@
     require_once("database.php");
 	require_once("coinbase-php/lib/Coinbase.php");
     
-    $stmt = $conn->prepare('SELECT access_token, refresh_token, expire_time FROM student WHERE username = (select seller from bookListing where id = ?)');
-    $stmt->execute(array($listingID));
+    $stmt = $conn->prepare('SELECT access_token, refresh_token, expire_time, email FROM student WHERE username = ?');
+    $stmt->execute(array($_SESSION['user']));
 
     if($row = $stmt->fetch()) {
         if (isset($row["access_token"]))
         {
+            //echo $row["email"];
         	$tokens = array(
             "access_token" => $row["access_token"],
             "refresh_token" => $row["refresh_token"],
             "expire_time" => $row["expire_time"]); #From database
-
-            $coinbaseOauth = new Coinbase_OAuth($_gCLIENT_ID, $_gCLIENT_SECRET, $_gREDIRECT_URL);
+            $coinbaseOauth = Coinbase::withOauth($_gCLIENT_ID, $_gCLIENT_SECRET, $_gREDIRECT_URL);
             $coinbase = Coinbase::withOauth($coinbaseOauth, $tokens);
-            #$coinbase->requestMoney('alexan_s@encs.concordia.ca', 0.01, "My test");
+            //$tokens = $coinbaseOauth->refreshTokens($tokens);
+            /*$stmt = $conn->prepare('update user set access_token = ?, refresh_token = ?, expire_time = ?');
+              $stmt->execute(array($tokens['access_token'], $tokens['refresh_token'], $tokens['expire_time']));*/
+            $coinbase->requestMoney($row["email"], $price, "You've bought a book!");
         }
     }
 

@@ -13,6 +13,7 @@ CREATE TABLE student
 username varchar(255) NOT NULL,
 LastName varchar(255) NOT NULL,
 FirstName varchar(255) NOT NULL,
+email varchar(255) NOT NULL,
 password varchar(255) NOT NULL,
 access_token varchar(255),
 refresh_token varchar(255),
@@ -20,11 +21,13 @@ expire_time int,
 PRIMARY KEY (username)
 );
 
-insert into student(username, LastName, FirstName, password) values
-('Smi_Jo', 'Smith', 'John', MD5('password')),
-('Jo_Bo', 'Jones', 'Bob', MD5('password')),
-('Bi_bo', 'Bob', 'Billy', MD5('password')),
-('Wi_Whe', 'Wheaton', 'Will', MD5('password'));
+insert into student(username, LastName, FirstName, email, password) values
+('Smi_Jo', 'Smith', 'John', 'john@encs.concordia.ca', MD5('password')),
+('Jo_Bo', 'Jones', 'Bob','jones@encs.concordia.ca', MD5('password')),
+('Bi_bo', 'Bob', 'Billy','billy@encs.concordia.ca', MD5('password')),
+('Wi_Whe', 'Wheaton', 'Will','will@encs.concordia.ca', MD5('password')),
+('alex', 'Simard', 'Alexandre','alexan_s@encs.concordia.ca', MD5('password')),
+('phil', 'laferriere', 'Phil','laferriere.phil@gmail.com', MD5('password'));
 
 DROP table IF EXISTS course;
 CREATE TABLE course

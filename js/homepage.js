@@ -19,11 +19,12 @@ function searchForBook()
     console.log(courseNumberBox);
     if(courseNameBox.value != "" || courseNumberBox.value != "")
     {
+	console.log('wat------');
 	var url = "get_book_list.php?" +
 	    ((courseNameBox.value != "")?"faculty=" + 
 	     courseNameBox.value:"") + 
 
-	    ((courseNameBox.value != "" && courseNumberBox.value != "")?"?":"")+
+	    ((courseNameBox.value != "" && courseNumberBox.value != "")?"&":"")+
 	    
 	    ((courseNumberBox.value != "")?"code=" + 
 	     courseNumberBox.value:"");

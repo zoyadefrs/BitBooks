@@ -1,8 +1,8 @@
 <?php
 #GLOBALS
-$_gCLIENT_ID = "4dbc3a46bcd1fce37259e5a715da8c513ab69f4366adc2155068f4caeb2f2ef3"; 
-$_gCLIENT_SECRET = "2ac72ec6461e08f003cd4799aa94a6544d72005be20efc9ed2266d95ab6c223a";
-$_gREDIRECT_URL = "https://localhost";
+$_gCLIENT_ID = "08be435839fa3aea6c41aefd417bfd3b0b68610f32952cdb4a9032437831961d"; 
+$_gCLIENT_SECRET = "cb395eb92796a496be3760af79fae9f5b535cdd913efa03a57d81bfb6d54a182";
+$_gREDIRECT_URL = "https://localhost/work/yhack";
 
 function validate_input($data) {
   $data = trim($data);
