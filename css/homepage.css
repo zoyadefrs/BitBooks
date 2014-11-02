@@ -22,11 +22,6 @@
 
 
 }
-table tr td select#departmentname {
-    min_width:150px;
-}
-
-
 
 .search {
     text-align: right;

@@ -45,16 +45,7 @@ require_once("navbar.php");
 	</td>
 	</tr>
 	<tr>
-	<td>&nbsp;&nbsp;</td>
-	<td style="white-space:nowrap;">
-	<b>Faculty Department:</b>
-	&nbsp;
-	</td>
-	<td align="left" colspan="1">
-	<select name="department" id="departmentname" style="background-color:White;">
-	<option value="0120">Engineering and Computer Science</option>
-	</select>
-	</td>
+	
 
 	<tr>
 	<td>&nbsp;&nbsp;</td>
