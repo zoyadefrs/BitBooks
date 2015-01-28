@@ -114,9 +114,13 @@
     require_once("database.php");
 	require_once("coinbase-php/lib/Coinbase.php");
     
-    $stmt = $conn->prepare('SELECT access_token, refresh_token, expire_time, email FROM student WHERE username = ?');
-    $stmt->execute(array($_SESSION['user']));
-
+    $stmt = $conn->prepare('SELECT access_token, refresh_token, expire_time, email FROM student where username = (select seller from bookListing where id = ?)');
+    $stmt->execute(array($listingID));
+    
+    $stmt2 = $conn->prepare('SELECT email from student where username = ?');
+    $stmt2->execute(array($_SESSION['user']));
+    $frow = $stmt2->fetch();
+    $bemail = $frow['email'];
     if($row = $stmt->fetch()) {
         if (isset($row["access_token"]))
         {
@@ -130,7 +134,7 @@
             //$tokens = $coinbaseOauth->refreshTokens($tokens);
             /*$stmt = $conn->prepare('update user set access_token = ?, refresh_token = ?, expire_time = ?');
               $stmt->execute(array($tokens['access_token'], $tokens['refresh_token'], $tokens['expire_time']));*/
-            $coinbase->requestMoney($row["email"], $price, "You've bought a book!");
+            $coinbase->requestMoney($bemail, $price, "You've bought a book!");
         }
     }
 
